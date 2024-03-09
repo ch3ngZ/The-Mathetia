@@ -1,0 +1,196 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://2StartGamePage/StartGamePageScript.gd" type="Script" id=2]
+[ext_resource path="res://Universal UI/Button/(Round)MainPageButtonUI.png" type="Texture" id=3]
+[ext_resource path="res://Universal UI/Button/(RoundHover)MainPageButtonUI.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1.02837, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1.02837, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="StartGamePage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoBackButton" type="TextureButton" parent="."]
+anchor_left = 0.151
+anchor_top = 0.088
+anchor_right = 0.151
+anchor_bottom = 0.088
+margin_left = -159.6
+margin_top = -40.0
+margin_right = 40.4
+margin_bottom = 60.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GoBackButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -20.0
+margin_right = 25.0
+margin_bottom = 22.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+text = "<="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GoBackButton"]
+anims/Flash = SubResource( 1 )
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -658.5
+margin_top = -234.218
+margin_right = 658.5
+margin_bottom = 250.782
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrologueButton" type="Button" parent="HBoxContainer"]
+margin_right = 1317.0
+margin_bottom = 46.0
+text = "Prologue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/PrologueButton"]
+anims/Flash = SubResource( 2 )
+
+[node name="RationalCityButton" type="Button" parent="HBoxContainer"]
+margin_top = 96.0
+margin_right = 1317.0
+margin_bottom = 142.0
+text = "Rational City"
+
+[node name="FunctionJungleButton2" type="Button" parent="HBoxContainer"]
+margin_top = 192.0
+margin_right = 1317.0
+margin_bottom = 238.0
+text = "Function  Jungle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrigonometryDesertButton3" type="Button" parent="HBoxContainer"]
+margin_top = 288.0
+margin_right = 1317.0
+margin_bottom = 334.0
+text = "Trigonometry Desert"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CalculusPalaceButton" type="Button" parent="HBoxContainer"]
+margin_top = 384.0
+margin_right = 1317.0
+margin_bottom = 430.0
+text = "Calculus Palace"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EpilogueButton" type="Button" parent="HBoxContainer"]
+margin_top = 480.0
+margin_right = 1317.0
+margin_bottom = 526.0
+text = "Epilogue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = -0.015
+anchor_top = -0.048
+margin_left = -56.0
+margin_top = -56.0
+margin_right = 1704.0
+margin_bottom = 1120.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+anims/FadeIn = SubResource( 3 )
+anims/FadeOut = SubResource( 4 )
