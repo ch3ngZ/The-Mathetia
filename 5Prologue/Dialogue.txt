@@ -1,0 +1,43 @@
+[0]
+silhouette="x"
+sprite="null"
+name_tag="null"
+text_box="x"
+background="bedroom"
+dialogue="The screen opens onto a dimly lit room. Textbooks and papers are strewn across a desk. The soft humming of a computer fills the silence. The protagonist is slumped in his chair, staring blankly at a math problem on his computer screen. (Sound of quiet electronic humming)"
+
+[1]
+silhouette="null"
+sprite="x"
+name_tag="x"
+text_box="x"
+background="bedroom"
+dialogue="\"Algebra, functions, trigonometry...and calculus... Why does it all have to be so complicated?\""
+
+[2]
+silhouette="x"
+sprite="null"
+name_tag="null"
+text_box="x"
+background="bedroom"
+dialogue="X's eyelids grow heavy. He rubs his temples, the dull throbbing of a headache beginning to pulse. He glances at the clock - it's late. But the finals are tomorrow, and he has no choice but to continue. (Sound of ticking clock)"
+
+[3]
+silhouette="x"
+sprite="null"
+name_tag="null"
+text_box="x"
+background="bedroom"
+dialogue="He glances at the clock - it's late. But the finals are tomorrow, and he has no choice but to continue. (Sound of ticking clock)"
+
+[4]
+silhouette="null"
+sprite="x"
+name_tag="x"
+text_box="x"
+background="bedroom"
+dialogue="\"Damn I hate this.\""
+
+
+
+

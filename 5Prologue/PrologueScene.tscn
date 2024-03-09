@@ -1,0 +1,430 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Universal UI/Dialogue/Bedroom.png" type="Texture" id=1]
+[ext_resource path="res://Universal UI/Dialogue/XNameTag.png" type="Texture" id=2]
+[ext_resource path="res://Universal UI/Dialogue/X.png" type="Texture" id=3]
+[ext_resource path="res://Universal UI/Dialogue/TextBox.png" type="Texture" id=4]
+[ext_resource path="res://Universal UI/Dialogue/XSilhouette.png" type="Texture" id=5]
+[ext_resource path="res://6RationalGrass/Draft/PrologueDialogueScript.gd" type="Script" id=6]
+[ext_resource path="res://0Font/textFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://OST/Udon for Breakfast, Pasta for Lunch.mp3" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BackgroundIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 800, -500 ), Vector2( 800, 500 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "BackgroundOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 800, 500 ), Vector2( 800, 1500 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SpriteIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 2000, 550 ), Vector2( 1250, 550 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "SpriteOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 1250, 550 ), Vector2( 2000, 550 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "SilhouetteIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( -300, 600 ), Vector2( 300, 600 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "SilhouetteOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 600 ), Vector2( -300, 600 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "TextBoxIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "TextBoxOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "NameTagIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "NameTagOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "DisplayText"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "historyRectIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( -1100, -200 ), Vector2( 20, -200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../BlockRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.490196 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../ScrollContainer:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( -1100, 50 ), Vector2( 45, 50 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "historyRectOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../BlockRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.490196 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ), Vector2( -1100, -200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../ScrollContainer:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.15, 1 ),
+"update": 0,
+"values": [ Vector2( 45, 50 ), Vector2( -1100, 50 ) ]
+}
+
+[node name="PrologueScene" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 798.956, 500 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+anims/BackgroundIn = SubResource( 1 )
+anims/BackgroundOut = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2000, 550 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/SpriteIn = SubResource( 3 )
+anims/SpriteOut = SubResource( 4 )
+
+[node name="Silhouette" type="Sprite" parent="."]
+position = Vector2( -300, 600 )
+scale = Vector2( 1.12606, 1.19422 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Silhouette"]
+anims/SilhouetteIn = SubResource( 5 )
+anims/SilhouetteOut = SubResource( 6 )
+
+[node name="TextBox" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 109.806, 1267.67 )
+scale = Vector2( 1.05988, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( 534.529, -483.623 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextBox"]
+anims/TextBoxIn = SubResource( 7 )
+anims/TextBoxOut = SubResource( 8 )
+
+[node name="NameTag" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 298.979, 636.386 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NameTag"]
+anims/NameTagIn = SubResource( 9 )
+anims/NameTagOut = SubResource( 10 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 92.8811
+margin_top = 712.0
+margin_right = 1224.88
+margin_bottom = 963.0
+custom_fonts/normal_font = ExtResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "
+"
+text = "
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text"]
+anims/DisplayText = SubResource( 11 )
+
+[node name="Transition" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = -0.015
+anchor_top = -0.048
+margin_left = -56.0
+margin_top = -56.0
+margin_right = 1704.0
+margin_bottom = 1120.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+anims/FadeIn = SubResource( 12 )
+anims/FadeOut = SubResource( 13 )
+
+[node name="DialogueHistory" type="Node2D" parent="."]
+
+[node name="BlockRect" type="ColorRect" parent="DialogueHistory"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1600.0
+margin_bottom = 1000.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryRect" type="ColorRect" parent="DialogueHistory"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = -1100.0
+margin_top = -200.0
+margin_bottom = 1000.0
+rect_rotation = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueHistory/HistoryRect"]
+anims/historyRectIn = SubResource( 14 )
+anims/historyRectOut = SubResource( 15 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogueHistory"]
+margin_left = -1100.0
+margin_top = 50.0
+margin_right = -238.0
+margin_bottom = 950.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueHistory/ScrollContainer"]
+margin_right = 850.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 850, 900 )
+custom_fonts/normal_font = ExtResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Hello World."
+text = "Hello World."
+fit_content_height = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
