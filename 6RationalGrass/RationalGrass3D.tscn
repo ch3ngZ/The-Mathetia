@@ -1,0 +1,186 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Universal UI/Rational Field/Background/RationalGrass.png" type="Texture" id=1]
+[ext_resource path="res://Universal UI/Card/card_00.png" type="Texture" id=2]
+[ext_resource path="res://Universal UI/Card/LimitBox.png" type="Texture" id=3]
+[ext_resource path="res://Universal UI/Dialogue/Main Character Back side.png" type="Texture" id=4]
+[ext_resource path="res://6RationalGrass/CardDeck.gd" type="Script" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=4]
+material = SubResource( 3 )
+
+[node name="RationalGrass" type="Spatial"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.472501, 1.71447, 3.84928 )
+omni_range = 50.0
+omni_attenuation = 5.0
+
+[node name="RationalGrass" type="MeshInstance" parent="."]
+transform = Transform( 9, 0, 0, 0, 7, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Card" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="Camera" type="Camera" parent="Card"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5 )
+size = 1.8
+
+[node name="LeftTrigger" type="Panel" parent="Card"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 385.0
+margin_top = 310.0
+margin_right = 620.0
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleTrigger" type="Panel" parent="Card"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 682.5
+margin_top = 310.0
+margin_right = 917.5
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightTrigger" type="Panel" parent="Card"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 980.0
+margin_top = 310.0
+margin_right = 1215.0
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XBack" type="Sprite" parent="Card"]
+position = Vector2( 795, 800 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="LimitBox" type="Sprite" parent="Card"]
+position = Vector2( 800, 500 )
+texture = ExtResource( 3 )
+
+[node name="CardTween" type="Tween" parent="Card"]
+
+[node name="CameraTween" type="Tween" parent="Card"]
+
+[node name="NewCardTween" type="Tween" parent="Card"]
+
+[node name="CardFlipTween" type="Tween" parent="Card"]
+repeat = true
+playback_speed = 2.0
+playback/repeat = true
+playback/speed = 2.0
+
+[node name="CardDeckTest" type="Spatial" parent="."]
+visible = false
+
+[node name="RowHolder00" type="Spatial" parent="CardDeckTest"]
+
+[node name="CardBack" type="MeshInstance" parent="CardDeckTest/RowHolder00"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.625, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack2" type="MeshInstance" parent="CardDeckTest/RowHolder00"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack3" type="MeshInstance" parent="CardDeckTest/RowHolder00"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0.625, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="RowHolder01" type="Spatial" parent="CardDeckTest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.2 )
+visible = false
+
+[node name="CardBack" type="MeshInstance" parent="CardDeckTest/RowHolder01"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack2" type="MeshInstance" parent="CardDeckTest/RowHolder01"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack3" type="MeshInstance" parent="CardDeckTest/RowHolder01"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="RowHolder02" type="Spatial" parent="CardDeckTest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.4 )
+visible = false
+
+[node name="CardBack" type="MeshInstance" parent="CardDeckTest/RowHolder02"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack2" type="MeshInstance" parent="CardDeckTest/RowHolder02"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack3" type="MeshInstance" parent="CardDeckTest/RowHolder02"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="RowHolder03" type="Spatial" parent="CardDeckTest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.6 )
+visible = false
+
+[node name="CardBack" type="MeshInstance" parent="CardDeckTest/RowHolder03"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack2" type="MeshInstance" parent="CardDeckTest/RowHolder03"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack3" type="MeshInstance" parent="CardDeckTest/RowHolder03"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="RowHolder04" type="Spatial" parent="CardDeckTest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.8 )
+visible = false
+
+[node name="CardBack" type="MeshInstance" parent="CardDeckTest/RowHolder04"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack2" type="MeshInstance" parent="CardDeckTest/RowHolder04"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CardBack3" type="MeshInstance" parent="CardDeckTest/RowHolder04"]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 0.65, 0, 2 )
+mesh = SubResource( 4 )
+material/0 = null
