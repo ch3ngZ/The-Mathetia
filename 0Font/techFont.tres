@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://0Font/Imports/Play Pretend.otf" type="DynamicFontData" id=1]
+
+[resource]
+resource_local_to_scene = true
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
