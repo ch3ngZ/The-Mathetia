@@ -1,0 +1,236 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://0Font/techFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://0Font/buttonFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://1HomePage/HomePageScript.gd" type="Script" id=3]
+[ext_resource path="res://Universal UI/Button/(Long)MainPageButtonUI.png" type="Texture" id=4]
+[ext_resource path="res://Universal UI/Button/(LongHover)MainPageButtonUI.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1.02837, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1.02837, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1.02837, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeIn"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="HomePage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.41425
+margin_bottom = 1.41425
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomePageTitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -392.0
+margin_top = -324.0
+margin_right = 387.0
+margin_bottom = -87.0
+custom_fonts/font = ExtResource( 1 )
+text = "The Mathoria"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -402.5
+margin_top = -62.0
+margin_right = 402.5
+margin_bottom = 298.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGameButton" type="TextureButton" parent="ButtonContainer"]
+margin_right = 805.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="StartGameText" type="RichTextLabel" parent="ButtonContainer/StartGameButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -94.4142
+margin_top = -17.0
+margin_right = 144.586
+margin_bottom = 41.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonContainer/StartGameButton"]
+anims/Flash = SubResource( 1 )
+
+[node name="LoadGameButton" type="TextureButton" parent="ButtonContainer"]
+margin_top = 130.0
+margin_right = 805.0
+margin_bottom = 230.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGameText" type="RichTextLabel" parent="ButtonContainer/LoadGameButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -16.0
+margin_right = 163.0
+margin_bottom = 40.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonContainer/LoadGameButton"]
+anims/Flash = SubResource( 2 )
+
+[node name="GalleryButton" type="TextureButton" parent="ButtonContainer"]
+margin_top = 260.0
+margin_right = 805.0
+margin_bottom = 360.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GalleryText" type="RichTextLabel" parent="ButtonContainer/GalleryButton"]
+anchor_left = 0.506
+anchor_top = 0.5
+anchor_right = 0.506
+anchor_bottom = 0.5
+margin_left = -69.33
+margin_top = -17.0
+margin_right = 97.67
+margin_bottom = 35.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Gallery"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonContainer/GalleryButton"]
+anims/Flash = SubResource( 3 )
+
+[node name="Transition" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.7937
+margin_top = -84.4126
+margin_right = 1700.21
+margin_bottom = 1083.59
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+autoplay = "FadeOut"
+anims/FadeIn = SubResource( 4 )
+anims/FadeOut = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
