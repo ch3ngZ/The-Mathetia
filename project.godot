@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Card",
+"language": "GDScript",
+"path": "res://6RationalGrass/Draft/Card.gd"
+}, {
+"base": "Node2D",
+"class": "CardDeck",
+"language": "GDScript",
+"path": "res://6RationalGrass/Draft/CardDeck.gd"
+} ]
+_global_script_class_icons={
+"Card": "",
+"CardDeck": ""
+}
+
+[application]
+
+config/name="Cheng - Capstone Project"
+run/main_scene="res://5Prologue/PrologueScene.tscn"
+
+[display]
+
+window/size/width=1600
+window/size/height=1000
+window/size/resizable=false
+window/dpi/allow_hidpi=true
+
+[global]
+
+font=false
+windpw=false
+
+[gui]
+
+theme/custom_font="res://0Font/buttonFont.tres"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
