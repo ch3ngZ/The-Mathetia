@@ -1,4 +1,5 @@
 this is some content to mess with
 content to append
 totally different content to merge later
-
+hello hello hello
+this is a test file
