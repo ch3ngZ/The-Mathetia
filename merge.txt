@@ -3,3 +3,6 @@ content to append
 totally different content to merge later
 hello hello hello
 this is a test file
+
+
+I added something new here.
